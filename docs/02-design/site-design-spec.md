@@ -18,7 +18,7 @@
 | `/sebitai/agen-d` | Agen-D (3D/2D 설계 변환) | `sebitai/agen-d/index.html` |
 | `/sebitai/agen-sight` | Agen-Sight (산업안전 AI) | `sebitai/agen-sight/index.html` |
 | `/sebitai/agen-talk` | Agen-Talk (RAG 챗봇) | `sebitai/agen-talk/index.html` |
-| `/sebitai/usecase` | AI Use Case (도입 사례) | `sebitai/usecase/index.html` |
+| `/sebitai/usecase` | AI Use Case (도입 사례) — **미사용, nav에서 숨김** | `sebitai/usecase/index.html` |
 | `/lumo` | LUMO 개요 | `lumo/index.html` |
 | `/lumo/mobile` | LUMO Mobile (하이브리드 앱 플랫폼) | `lumo/mobile/index.html` |
 | `/lumo/push` | LUMO Push (웹 푸시 서비스) | `lumo/push/index.html` |
@@ -43,8 +43,8 @@
 Home | Brand Story | SEbit AI ▼ | LUMO ▼ | GeoAxis ▼
                      ├ Agen-D        ├ Mobile    ├ 2D GIS Engine
                      ├ Agen-Sight    └ Push      ├ 3D GIS Engine
-                     ├ Agen-Talk                  ├ CAD Web Viewer
-                     └ Use Case                   ├ CAD 도면비교
+                     └ Agen-Talk                  ├ CAD Web Viewer
+                     (Use Case 숨김)              ├ CAD 도면비교
                                                   ├ Layout Manager
                                                   ├ Xler
                                                   ├ AR

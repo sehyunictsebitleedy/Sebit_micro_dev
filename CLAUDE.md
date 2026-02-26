@@ -9,19 +9,21 @@
 
 | 항목 | URL | 플랫폼 |
 |------|-----|--------|
-| 정적사이트 | https://sebit-micro-web.pages.dev | Cloudflare Pages (git push 자동배포) |
+| 정적사이트 | https://sebit-micro.pages.dev | Cloudflare Pages (wrangler 수동배포) |
 | API Worker | https://sebit-micro-api.sh1stzfold7.workers.dev | Cloudflare Workers |
 
-- **브랜치**: `master` (push하면 Cloudflare Pages 자동 배포)
+- **정적사이트 배포**: `cd api && npx wrangler pages deploy ".." --project-name sebit-micro --branch master --commit-dirty=true`
 - **API 배포**: `cd api && npx wrangler deploy`
+- **참고**: GitHub 연동(자동배포)은 미설정 상태. 필요 시 Cloudflare Dashboard에서 연결
 
 ## 기술 스택
 
-### 정적사이트 (sebit_v02/)
+### 정적사이트 (프로젝트 루트)
 - **순수 HTML/CSS/JS** - 프레임워크 없음 (No React, No Next.js, No build tool)
-- HTML 페이지 10개 (index.html + sub 9개)
+- HTML 페이지 19개 (클린 URL 구조: 폴더/index.html)
 - CSS: commons.css, styles.css, chatbot.css, xeicon (아이콘)
-- JS: main.js (공통 UI), chatbot.js (AI 챗봇 위젯, IIFE)
+- JS: main.js (공통 UI), chatbot.js (Agen-Talk AI 챗봇 위젯, IIFE)
+- **sebit_v02/는 레거시 백업** — 배포 대상 아님
 
 ### API 백엔드 (api/)
 - **Hono** (Cloudflare Workers용 경량 프레임워크)
@@ -34,7 +36,40 @@
 ```
 SEbit Micro/
 ├── CLAUDE.md                    ← 이 파일
+├── README.md
 ├── .gitignore
+├── _redirects                   ← Cloudflare Pages 리다이렉트 규칙
+├── index.html                   ← 메인 페이지
+├── brand-story/index.html       ← 브랜드 스토리
+├── sebitai/                     ← SEbit AI 솔루션
+│   ├── index.html               ← AI 개요
+│   ├── agen-d/index.html        ← Agen-D (설계 변환 AI)
+│   ├── agen-sight/index.html    ← Agen-Sight (산업안전 AI)
+│   ├── agen-talk/index.html     ← Agen-Talk (RAG 챗봇)
+│   └── usecase/index.html       ← Use Case (미사용, nav에서 숨김)
+├── lumo/                        ← LUMO 솔루션
+│   ├── index.html               ← LUMO 개요
+│   ├── mobile/index.html        ← LUMO Mobile
+│   └── push/index.html          ← LUMO Push
+├── geoaxis/                     ← GeoAxis 솔루션
+│   ├── index.html               ← GeoAxis 개요
+│   ├── 2d-gis/index.html
+│   ├── 3d-gis/index.html
+│   ├── cad-view/index.html
+│   ├── cad-compare/index.html
+│   ├── layout-manager/index.html
+│   ├── xler/index.html
+│   ├── ar/index.html
+│   └── rmcp/index.html
+├── css/                         ← 스타일시트
+│   ├── commons.css              ← 리셋/공통
+│   ├── styles.css               ← 메인 스타일
+│   └── chatbot.css              ← 챗봇 위젯 스타일
+├── js/
+│   ├── main.js                  ← 공통 JS (reveal, 탭, 스크롤)
+│   └── chatbot.js               ← Agen-Talk AI 챗봇 (IIFE)
+├── img/                         ← 이미지 리소스
+├── fonts/                       ← xeicon 폰트
 ├── api/                         ← Hono Workers API
 │   ├── src/
 │   │   ├── index.ts             ← API 엔드포인트 (/api/chat, /api/health)
@@ -42,26 +77,9 @@ SEbit Micro/
 │   ├── wrangler.toml            ← Workers 설정 + AI binding
 │   ├── package.json
 │   └── tsconfig.json
-├── sebit_v02/                   ← 정적 사이트
-│   ├── index.html               ← 메인 페이지
-│   ├── sub.html                 ← Brand Story
-│   ├── sub01.html               ← SEbit LUMO 메인
-│   ├── sub02.html               ← SEbit AI 메인
-│   ├── sub02_01.html            ← Safety AI
-│   ├── sub02_02.html            ← Draft AI
-│   ├── sub02_03.html            ← Chatbot AI
-│   ├── sub02_04.html            ← SEbit AI 상세
-│   ├── sub03.html               ← LUMO Mobile
-│   ├── sub03_01.html            ← LUMO Push
-│   ├── css/
-│   │   ├── commons.css          ← 리셋/공통
-│   │   ├── styles.css           ← 메인 스타일
-│   │   ├── chatbot.css          ← 챗봇 위젯 스타일
-│   │   └── xeicon.min.css       ← 아이콘 폰트
-│   ├── js/
-│   │   ├── main.js              ← 공통 JS (reveal, 탭, 스크롤)
-│   │   └── chatbot.js           ← AI 챗봇 위젯 (IIFE)
-│   └── img/                     ← 이미지 리소스
+├── docs/                        ← 문서
+│   └── 02-design/site-design-spec.md
+└── sebit_v02/                   ← ⚠️ 레거시 백업 (배포 대상 아님)
 ```
 
 ---
@@ -82,7 +100,7 @@ SEbit Micro/
 
 ### 3. 파일 작업 규칙
 - **Read 먼저, Edit 나중**: 파일을 수정하기 전에 반드시 먼저 Read로 읽을 것
-- **HTML 수정 시 전체 10페이지 일관성 확인**: 하나를 바꾸면 나머지도 동일하게 변경
+- **HTML 수정 시 전체 19페이지 일관성 확인**: 하나를 바꾸면 나머지도 동일하게 변경 (nav/header/footer)
 - **backup 파일 건드리지 않기**: *_backup.html 파일은 수정/삭제하지 말 것
 
 ### 4. TypeScript 타입 규칙
@@ -92,7 +110,8 @@ SEbit Micro/
 
 ### 5. 배포 규칙
 - **API 변경 시**: `cd api && npx wrangler deploy`로 Workers 재배포
-- **정적사이트 변경 시**: git push → Cloudflare Pages 자동 배포
+- **정적사이트 변경 시**: `cd api && npx wrangler pages deploy ".." --project-name sebit-micro --branch master --commit-dirty=true`
+- **배포 소스**: 프로젝트 루트 (`..`) — `sebit_v02/`가 아님!
 - **chatbot.js의 apiUrl은 프로덕션 URL 유지**: `https://sebit-micro-api.sh1stzfold7.workers.dev/api/chat`
 - wrangler.toml의 ALLOWED_ORIGINS에 새 도메인 추가 시 재배포 필요
 

@@ -19,7 +19,7 @@
 | `/sebitai/agen-d` | Agen-D | 3D/2D 설계 데이터 AI 자율 변환 |
 | `/sebitai/agen-sight` | Agen-Sight | 인간+객체 복합 감지 산업안전 AI |
 | `/sebitai/agen-talk` | Agen-Talk | 기업 지식 기반 RAG 대화 에이전트 |
-| `/sebitai/usecase` | Use Case | AI 솔루션 도입 사례 |
+| `/sebitai/usecase` | Use Case | AI 솔루션 도입 사례 (미사용, nav에서 숨김) |
 | **LUMO** | | |
 | `/lumo` | LUMO 개요 | 차세대 모바일 통합 플랫폼 |
 | `/lumo/mobile` | LUMO Mobile | 하이브리드 앱 개발 플랫폼 |
@@ -59,7 +59,7 @@ SEbit Micro/
 │   ├── agen-d/index.html
 │   ├── agen-sight/index.html
 │   ├── agen-talk/index.html
-│   └── usecase/index.html
+│   └── usecase/index.html   # 미사용 (nav에서 숨김)
 ├── lumo/
 │   ├── index.html            # LUMO 개요
 │   ├── mobile/index.html
@@ -121,8 +121,12 @@ SEbit Micro/
 
 ### 5. 배포
 
-#### 웹사이트 (자동)
-master 브랜치에 push하면 Cloudflare Pages가 자동 배포합니다.
+#### 웹사이트 (수동 - wrangler CLI)
+```bash
+cd api
+npx wrangler pages deploy ".." --project-name sebit-micro --branch master --commit-dirty=true
+```
+> GitHub 자동배포 미설정 상태. 필요 시 Cloudflare Dashboard에서 연결.
 
 #### API (수동)
 ```bash
@@ -149,6 +153,9 @@ npx wrangler deploy
 | 2026-02-20 | 메인 페이지 키워드 업데이트 | `f0af017` |
 | 2026-02-20 | 풀 사이트 감사 + 버그 수정 | `73a3224` |
 | 2026-02-20 | PDCA Gap 분석 → 4건 수정 | `d51ac11` |
+| 2026-02-20 | README.md 산출물 기준 문서 작성 | `e15840c` |
+| 2026-02-26 | Cloudflare 재연동 (Pages: sebit-micro, Workers API 재배포) | — |
+| 2026-02-26 | Use Case 페이지 nav에서 숨김 (18개 페이지) | — |
 
 ### 7. PDCA 품질 관리
 
