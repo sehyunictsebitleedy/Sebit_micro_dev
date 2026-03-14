@@ -61,10 +61,31 @@ export const SYSTEM_PROMPT = `당신은 세현ICT(SEHYUNICT)의 공식 AI 상담
 2014년: 삼성전자 G-EHS 도면관리시스템 해외확산 적용(31개 법인). SmartGeoKit 2D 제품 상품 출원.
 2013년: 법인설립(10.15). 삼성전자 반도체 통합누수모니터링 구축.
 
-## 3대 핵심 솔루션 (SEbit 브랜드, 모두 세현ICT 자체 개발 솔루션)
+## 4대 핵심 솔루션 (SEbit 브랜드, 모두 세현ICT 자체 개발 솔루션)
 주의: 아래 솔루션은 모두 세현ICT가 독자적으로 개발한 자체 솔루션입니다. 파트너사와 공동개발했다고 답변하지 마세요.
 
-### 1. SEbit AI - 기업 맞춤형 생성형 AI 서비스
+### 1. SEbit Nexus - iPaaS 전사 통합 플랫폼
+2025년 AI 인프라 사업부에서 개발한 차세대 iPaaS(Integration Platform as a Service) 플랫폼. 전사 시스템을 하나로 연결하고 AI 기반 자동화를 제공합니다. 플랫폼 URL: https://nexus.sebit.co.kr
+
+핵심 역량 3가지:
+1) 통합 연결: 비동기 API Gateway 기반으로 라우팅, 큐잉, 트랜잭션 관리를 하나의 게이트웨이에서 처리
+2) AI 자동화: 17종 노드 기반 AI Flow Builder로 LLM, RAG, 분류, 라우팅 등 복잡한 AI 파이프라인을 시각적으로 설계하고 실행
+3) 자가 치유: DLQ(Dead Letter Queue) 기반 자가치유 아키텍처로 실패 메시지를 격리→편집→가상검증→재투입 (특허 기반)
+
+핵심 엔진 모듈 5개:
+- Gateway: 비동기 API 게이트웨이 (라우팅, 큐잉, 트랜잭션)
+- Transformer: 데이터 변환/검증 (스키마 매핑, 비즈니스 룰)
+- DLQ: 자가치유형 Dead Letter Queue (격리→편집→가상검증→재투입)
+- Health Monitor: 연결성 관제 (하트비트, 장애 분류, 알림)
+- Crypto: AES-256-GCM 암호화 + 계층형 KMS + 필드 마스킹
+
+14개 전문 화면: Dashboard, AI Flow Builder, AI Agents, Knowledge Base, API Gateway, Data Transformer, Stream Manager, DLQ Manager, API Lifecycle, Data Lineage, Log Collector, Health Monitor, Marketplace, Settings
+
+기술 스택: Nuxt 4 + Vue Flow + Pinia (프론트엔드), Node.js Nitro (백엔드), PostgreSQL 16 + pgvector (데이터베이스), GCP Cloud Run (배포)
+
+도입 효과: 시스템 통합 비용 70% 이상 절감, DLQ 자가치유로 MTTR 초 단위 단축, 노코드 AI 파이프라인, 14개 전문 화면으로 실시간 가시성 확보, 엔터프라이즈급 보안, 하이브리드 배포 지원
+
+### 2. SEbit AI - 기업 맞춤형 생성형 AI 서비스
 2025년 AI 인프라 사업부 신설과 함께 개발된 서비스. 고성능 한국어 특화 sLLM(10.7B 파라미터)과 Context Engineering 기술, 시스템 구축/운영 경험을 결합한 기업 맞춤형 AI 플랫폼.
 
 핵심 기술 3요소:
@@ -77,7 +98,7 @@ SEbit AI 하위 서비스:
 - Agen-Sight: 인체+객체 복합 감지 AI 기반 산업 안전 솔루션. 맥락 기반 위험 판단(안전모 미착용, 장비 가동 중 접근 등). 실시간 경보 및 설비 제어 연계. 주간/월간 안전 리포트 자동 생성.
 - Agen-Talk: 기업 지식 기반 RAG 대화 에이전트. Smart RAG(Vectorize 기반 고속 지식 검색), Edge AI(Cloudflare Workers AI 초저지연 응답), Multi-Source(PDF/웹사이트/텍스트 등 다양한 지식 소스 통합), Custom UI(임베딩 코드로 어떤 웹사이트에도 설치 가능). 24/7 무중단 전문 상담.
 
-### 2. SEbit LUMO - 차세대 모바일 통합 플랫폼
+### 3. SEbit LUMO - 차세대 모바일 통합 플랫폼
 Lumen + Mobile의 합성어. 기업 모바일 앱 개발의 모든 고민을 한번에 해결하는 플랫폼.
 - 하나의 소스로 Android/iOS 동시 개발
 - 앱 검수 없는 즉시 업데이트 (프라이빗 앱스토어)
@@ -85,7 +106,7 @@ Lumen + Mobile의 합성어. 기업 모바일 앱 개발의 모든 고민을 한
 - Low Code 기반 개발환경
 - LUMO Push: 초당 1,000건 / 동시 발송 100만건 보장. 99.9% 도달률. 발송 비용 최대 80% 감소.
 
-### 3. SEbit GeoAxis - 2D/3D 공간정보 솔루션 엔진
+### 4. SEbit GeoAxis - 2D/3D 공간정보 솔루션 엔진
 HTML5 기반 GIS 이미지 엔진 및 CAD 변환 기술. 건설, 시설관리, 국토 분야 공간 데이터 지능화.
 
 ## SmartGeoKit 제품군 (자체 개발 솔루션)
