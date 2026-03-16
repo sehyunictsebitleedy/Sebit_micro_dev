@@ -191,3 +191,6 @@ npx wrangler dev
 ## 라이선스
 
 Copyright (c) 2026 SEHYUNICT SEbit. All rights reserved.
+
+
+## 작업 내역 이력 - 동열
