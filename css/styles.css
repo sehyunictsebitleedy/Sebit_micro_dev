@@ -285,18 +285,22 @@ color: #c3c8e4;
 
 
 #section2 {background: url('../img/sc01_bg.png') no-repeat; background-size: cover;}
+#section2.section {padding:0;}
+#section2 .sc_inner {max-width:100%;}
 #section2 .sc02_wrap {display: flex; justify-content: space-between;}
-#section2 .sc02_wrap .box_wrap {width: calc((100% - 50px) / 4); }
+#section2 .sc02_wrap .box_wrap {width: calc((100%) / 4); }
 #section2 .sc02_wrap .box_wrap a {display:inline-block; width:100%; height:100%;}
 #section2 .sc02_wrap .box_wrap:nth-child(1) {transition: all 1s 0.4s;}
-#section2 .sc02_wrap .box_wrap h4 {font-family:'Ria'; position:relative; z-index: 1; font-size: 3.2rem; color: #fff; text-align: center;}
+#section2 .sc02_wrap .box_wrap h4 {font-family:'Ria'; transition: transform 0.3s ease; margin:0; top:25%; position:relative; z-index: 1; font-size: 3.2rem; color: #fff; text-align: center; text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6);}
+#section2 .sc02_wrap .box_wrap h4:hover {transform: translateY(10px);}
 #section2 .sc02_wrap .box_wrap h4 span {font-size:2.6rem; color:#fff; font-family: 'Noto Sans KR', 'Manrope', 'Apple SD Gothic Neo', sans-serif;}
-#section2 .sc02_wrap .box_wrap:nth-child(1) .box {background: url('../img/sc02_bg01_02.png') no-repeat center; background-size: cover;}
-#section2 .sc02_wrap .box_wrap .box {display: table; width: 100%; height: 100vh; border-radius: 40px; padding: 0 50px; box-sizing: border-box; transform: translateY(-120px);}
+#section2 .sc02_wrap .box_wrap:nth-child(1) {background: url('../img/sub02_02_bg.png') no-repeat center; background-size: cover;}
+#section2 .sc02_wrap .box_wrap .box {display: table; width: 100%; height: 100vh; box-sizing: border-box; }
 #section2 .sc02_wrap .box_wrap .box .txt {padding-bottom: 50px; display: table-cell; vertical-align: bottom; text-align: center; }
 #section2 .sc02_wrap .box_wrap .box .txt p{ font-size:1.1rem; color:#fff;}
-#section2 .sc02_wrap .box_wrap:nth-child(2) .box {background: url('../img/sc02_bg02_04.png') no-repeat center; background-size: cover;}
-#section2 .sc02_wrap .box_wrap:nth-child(3) .box {background: url('../img/sc02_bg03_03.png') no-repeat center; background-size: cover;}
+#section2 .sc02_wrap .box_wrap:nth-child(2) {background: url('../img/sc02_bg01_02.png') no-repeat center; background-size: cover;}
+#section2 .sc02_wrap .box_wrap:nth-child(3) {background: url('../img/sc02_bg02_04.png') no-repeat center; background-size: cover;}
+#section2 .sc02_wrap .box_wrap:nth-child(4) {background: url('../img/sc02_bg03_03.png') no-repeat center; background-size: cover;}
 
 #section3 {padding:6rem 0; display: block;}
 #section3 h2 {font-size:3.8rem; color:#000;  margin:40px 0; text-align: center; font-weight: bold;}
@@ -308,13 +312,13 @@ color: #c3c8e4;
 #section4 {background: url('../img/sc03_bg01.png') no-repeat center; background-size: cover;}
 
 #section5 {background: radial-gradient(circle at 20% -10%, rgba(0, 15, 30, 0.4), transparent 55%), radial-gradient(circle at 80% 120%, rgba(0, 125, 168, 0.4), transparent 60%), linear-gradient(180deg, #060b1c 0%, #04060f 100%);}
-.sc5_tit {font-size:3.4rem; line-height: 4rem; font-weight: bold; color: #fff; max-width: 100% !important; padding:0 0 20px; display: inline-block;}
+.sc5_tit {font-size:3rem; line-height: 4rem; font-weight: bold; color: #fff; max-width: 100% !important; padding:0 0 20px; display: inline-block;}
 #section5 ul {width:100%; display: inline-block; margin:0; padding:0;}
 #section5 ul li {float: left; height:250px; color:#fff; padding:2% 3%; width:47.8%; margin:1%; border:1px solid #565c7e; border-radius: 10px;}
 #section5 ul li:first-child {margin-left: 0;}
 #section5 ul li:nth-child(3) {margin-left:0;}
-.sc5_txt01 {font-size:2.2rem; font-weight: bold; width:100%; display: inline-block; padding:0 0 20px; color:#02defb;}
-.sc5_txt01 span {color: #fff; font-size:2.5rem;}
+.sc5_txt01 {font-size:2rem; font-weight: bold; width:100%; display: inline-block; padding:0 0 20px; color:#02defb;}
+.sc5_txt01 span {color: #fff; font-size:2.2rem;}
 .sc5_txt02 {font-size:1rem; color:#c5c5c5; word-break: keep-all;}
 
 #ContactUS {background: radial-gradient(circle at 20% -10%, rgba(0, 15, 30, 0.4), transparent 55%), radial-gradient(circle at 80% 120%, rgba(0, 125, 168, 0.4), transparent 60%), linear-gradient(180deg, #060b1c 0%, #04060f 100%);}
