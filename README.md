@@ -193,4 +193,6 @@ npx wrangler dev
 Copyright (c) 2026 SEHYUNICT SEbit. All rights reserved.
 
 
-## 작업 내역 이력 - 동열
+## 작업 내역 이력 - 동열 (leedy_work_260316 브랜치 생성)
+
+2026-03-16 : 메인 section02 CSS 수정 및 h4폰트 수정
