@@ -1,0 +1,9 @@
+name = "sebit-micro-api"
+main = "src/index.ts"
+compatibility_date = "2025-02-19"
+
+[ai]
+binding = "AI"
+
+[vars]
+ALLOWED_ORIGINS = "https://sebit-micro.pages.dev,https://sebit.co.kr,https://www.sebit.co.kr,http://localhost:3200"

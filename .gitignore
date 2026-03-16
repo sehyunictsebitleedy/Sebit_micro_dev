@@ -1,0 +1,27 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+
+# Dependencies
+node_modules/
+
+# Cloudflare Workers
+api/.wrangler/
+api/.dev.vars
+
+# Backup (원본 보존용)
+sebit_v02/
+
+# bkit internal
+.bkit/
+docs/.bkit-memory.json
+docs/.pdca-status.json
+docs/.pdca-snapshots/
+
+# Wrangler
+.wrangler/
