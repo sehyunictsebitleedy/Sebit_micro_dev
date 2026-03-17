@@ -292,6 +292,7 @@ color: #c3c8e4;
 #section2 .sc02_wrap {display: flex; justify-content: space-between;}
 #section2 .sc02_wrap .box_wrap {width: calc((100%) / 4); }
 #section2 .sc02_wrap .box_wrap a {display:inline-block; width:100%; height:100%;}
+#section2 .sc02_wrap .box_wrap a:hover {background:rgba(0,0,0,.5);}
 #section2 .sc02_wrap .box_wrap:nth-child(1) {transition: all 1s 0.4s;}
 #section2 .sc02_wrap .box_wrap h4 {font-family:'Ria'; transition: transform 0.3s ease; margin:0; top:25%; position:relative; z-index: 1; font-size: 3.2rem; color: #fff; text-align: center; text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6);}
 #section2 .sc02_wrap .box_wrap h4:hover {transform: translateY(10px);}
