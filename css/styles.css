@@ -171,6 +171,7 @@ justify-content: center;
 padding: 0 1.5rem;
 position: relative;
 overflow: hidden;
+background:rgba(0,0,0,.2);
 }
 
 
@@ -185,7 +186,8 @@ overflow: hidden;
     z-index: -1;
     transform: translate(-50%, -50%);
     object-fit: cover;
-    filter: brightness(70%);
+    filter: brightness(100%);
+    
   }
 
 .hero-inner {
@@ -469,7 +471,7 @@ main.sub {background: radial-gradient(circle at 20% -10%, rgba(0, 15, 30, 0.4), 
 
 .sub_txt01 {font-size:5.8rem; margin:40px 0 20px; font-family: 'GMarketSans'; font-weight: 300; line-height: 6rem;}
 .sub_txt01 span{font-size:5.8rem; padding:10px 0; font-family: 'GMarketSans'; font-weight: 500;}
-.sub_txt02 {font-size:1.2rem; margin:0px 0; line-height:2.4rem;}
+.sub_txt02 {font-size:1.4rem; margin:20px 0; line-height:2.4rem;}
 .sub_txt02 span {padding:0.2rem 1.4rem; margin:0.8rem 0.4rem; display: inline-block; background: #fff; color:#000; font-size:1rem; border-radius: 2rem;}
 .sub_txt02 strong{font-size:2rem;}
 .sub_txt03 {font-size:1.4rem; margin:150px 0 20px; font-weight: 300; line-height: 2.4rem;}
@@ -496,8 +498,9 @@ main.sub {background: radial-gradient(circle at 20% -10%, rgba(0, 15, 30, 0.4), 
 .sub02_02_bg {background: url('../img/sub02_02_bg.png') no-repeat center; background-size: cover; padding:100px 0;}
 .sub02_03_bg {background: url('../img/sub02_03_bg.png') no-repeat center; background-size: cover; padding:100px 0;}
 .sub02_04_bg {background: url('../img/sub_bg_b.png') no-repeat center; background-size: cover; padding:100px 0;}
-.sub03_01_bg {background: url('../img/sub03_01_bg.png') no-repeat center; background-size: cover; padding:100px 0;}
+.sub03_01_bg {background: url('../img/geoaxis_bg01.png') no-repeat center; background-size: cover; padding:100px 0;}
 .sub03_02_bg {background: url('../img/sub03_02_bg.png') no-repeat center; background-size: cover; padding:100px 0;}
+.sub_nexus_bg {background: url('../img/nexus_bg.png') no-repeat center; background-size: cover; padding:100px 0;}
 
 .agend-cta {display: inline-block; padding:15px 40px; background:#0035ff; color:#fff; border-radius:30px; font-size:1.2rem; text-decoration:none; margin-top:30px; transition:background-color 0.3s;}
 .agend-cta:hover {background:#002ad4;}
