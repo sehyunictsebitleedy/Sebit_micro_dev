@@ -502,6 +502,11 @@ main.sub {background: radial-gradient(circle at 20% -10%, rgba(0, 15, 30, 0.4), 
 .agend-cta {display: inline-block; padding:15px 40px; background:#0035ff; color:#fff; border-radius:30px; font-size:1.2rem; text-decoration:none; margin-top:30px; transition:background-color 0.3s;}
 .agend-cta:hover {background:#002ad4;}
 
+.card-cta {display: inline-flex; align-items: center; gap: 5px; padding: 7px 16px; font-size: 0.82rem; color: #48c5ff; border: 1px solid rgba(72, 197, 255, 0.45); border-radius: 32px; text-decoration: none; letter-spacing: 0.04em; background: rgba(72, 197, 255, 0.06); transition: all 0.25s ease;}
+.card-cta::after {content: '→'; font-size: 0.78rem; transition: transform 0.2s;}
+.card-cta:hover {background: rgba(72, 197, 255, 0.15); border-color: #48c5ff; color: #fff; box-shadow: 0 0 10px rgba(72, 197, 255, 0.2);}
+.card-cta:hover::after {transform: translateX(3px);}
+
 .tabs {
   width: 100%;
   max-width: 1400px;
